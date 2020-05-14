@@ -1,0 +1,35 @@
+.portrait-asset {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 15rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 52;
+
+    @include respond(md) {
+        min-width: 37rem;
+        left: 8rem;
+    }
+    @include respond(md) {
+        display: none;
+    }
+ 
+}
+
+
+
+.portrait-mobile {
+
+    @media screen and (min-width: 576px) {
+        display: none;
+    }
+
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    z-index: 52;
+    max-width: 50rem;
+    margin: 0 auto;
+
+}

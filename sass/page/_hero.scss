@@ -1,0 +1,57 @@
+.hero {
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    margin: 0 8rem 14rem;
+    min-height: calc(100vh - 8rem * 2 );
+    &__desktop {
+        display: block;
+        h1 {
+            font-size: 14rem;
+            color: var(--color-light);
+            letter-spacing: 7px;
+        }
+    }
+    &__mobile {
+        display: none;
+    }
+    
+    @include respond(md) {
+        min-height: calc(100vh - var(--nav-height));
+        margin: 0 0 14rem;
+        background-image: url(../../assets/img/hero-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &__desktop {
+            display: none;
+        }
+
+        &__mobile {
+            display: block;
+            color: var(--color-light);
+            h1 {
+                font-size: 5rem;
+                text-align: left;
+            }
+
+            p {
+                font-size: 2rem;    
+            }
+            
+          
+        }
+
+        
+        
+    }
+
+
+
+
+   
+}

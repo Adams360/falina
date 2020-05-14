@@ -1,0 +1,38 @@
+.contact {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__inner {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+
+        align-self: center;
+        min-width: 58rem;
+        margin-top: 10rem;
+
+        .icons {
+            margin: 2rem 0;
+            .icon {
+                color: var(--color-dark);
+                margin: 1rem;
+                transition: all .3s ease-in-out;
+                display: inline-block;
+                svg {width: 4rem;height: 4rem;
+                    path {fill: currentColor;}
+                }
+
+                &:hover {
+                    color: var(--color-primary);
+                    transform: scale(1.05);
+
+                }
+            }
+            
+        }
+    }
+
+
+}

@@ -1,0 +1,23 @@
+// GLOBAL STYLES
+@import "global/vars";
+@import "global/mixins";
+@import "global/base";
+@import "global/layout";
+@import "global/typography";
+
+@import "animations/lottie";
+
+// COMPONENTS STYLES
+@import "components/btn";
+@import "components/nav";
+@import "components/img";
+
+// PAGE STYLES
+@import "page/hero";
+@import "page/about";
+@import "page/projects";
+@import "page/contact";
+
+
+// lib
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers";

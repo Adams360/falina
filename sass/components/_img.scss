@@ -1,0 +1,20 @@
+.bird {
+        max-width: 13rem;
+        width: 100%;
+        height: auto;
+        
+        
+        &--nav {
+            margin: 0 auto;
+        display: none;
+        @include respond(md) {
+            display: block;
+        }
+    }
+    &--contact {
+        @include respond(md) {
+            margin: 0 auto;
+
+        }
+    }
+}

@@ -177,7 +177,8 @@ a {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%; } }
+      width: 100%;
+      padding: 2rem 3rem; } }
   .nav__menu {
     list-style: none;
     display: flex;
@@ -328,18 +329,25 @@ a {
         padding: 4rem;
         align-items: center; } }
   .about__graphics {
-    background-image: url(../../assets/img/about-bg.png);
-    background-size: 50rem;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-color: var(--color-primary);
     flex-basis: 50%;
-    position: relative; }
+    position: relative;
+    background-image: url(../../assets/img/about-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 0%; }
+    @media only screen and (max-width: 768px) {
+      .about__graphics {
+        animation: moveBg 13s linear infinite alternate; }
+      @keyframes moveBg {
+        to {
+          background-position-x: 100%; } } }
     @media only screen and (max-width: 768px) {
       .about__graphics {
         flex-basis: 100%;
         padding: 4rem; } }
     .about__graphics .portrait {
+      position: relative;
       max-width: 28rem; }
       @media only screen and (min-width: 768.1px) {
         .about__graphics .portrait {

@@ -27,13 +27,31 @@
         }
     }
     &__graphics {
-        background-image: url(../../assets/img/about-bg.png);
-        background-size: 50rem;
-        background-repeat: no-repeat;
-        background-size: cover;
+  
         background-color: var(--color-primary);
         flex-basis: 50%;
         position: relative;
+
+        background-image: url(../../assets/img/about-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: 0%;
+       
+        @include respond(md) {
+
+
+            animation: moveBg 13s linear infinite alternate;
+      
+            @keyframes moveBg {
+                to {
+                    background-position-x: 100%;
+                }
+            }
+
+
+        }
+  
+
 
         @include respond(md) {
             flex-basis: 100%;
@@ -42,6 +60,7 @@
         
 
         .portrait {
+            position: relative;
             max-width: 28rem;
             @include respond(mdUp) {
                 position: absolute;

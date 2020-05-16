@@ -401,6 +401,7 @@ a {
           background-image: url(../../assets/img/about-mobile-bg.png);
           background-size: cover;
           background-position-x: 0;
+          animation: moveBg 40s linear alternate infinite;
           z-index: 1; } }
     .about__graphics .portrait {
       position: absolute;

@@ -21,10 +21,15 @@
 
         h1 {
             font-size: 7rem;
+            transform: translateX(20%);
+            animation: moveText 3s ease-in forwards;
         }
 
         p {
             font-size: 4rem;
+            animation: fadeIn 3s 3s ease-out forwards;
+            opacity: 0;
+            margin-top: 3rem;
         }
 
  

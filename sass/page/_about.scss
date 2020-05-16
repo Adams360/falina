@@ -4,6 +4,7 @@
     justify-content: center;
     flex-wrap: wrap;
 
+
     @include respond(md) {
         text-align: center;
         flex-direction: column-reverse;
@@ -19,10 +20,14 @@
         flex-basis: 50%;
         padding: 8rem 0rem;
 
+        @include respond(lg) {
+            padding-right: 13rem;
+        }
+
         
         @include respond(md) {
             flex-basis: 100%;
-            padding: 4rem;
+            padding: 6rem;
             align-items: center;
         }
     }

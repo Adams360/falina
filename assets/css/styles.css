@@ -51,7 +51,7 @@ a {
       max-width: 1700px; } }
   @media only screen and (max-width: 1536px) {
     .container {
-      max-width: 1024px; } }
+      max-width: 1220px; } }
   @media only screen and (max-width: 768px) {
     .container {
       max-width: 720px; } }
@@ -132,10 +132,31 @@ a {
   100% {
     transform: translateY(37%); } }
 
+@keyframes moveHand {
+  100% {
+    transform: translateX(-50%); } }
+
+@keyframes moveText {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateX(0%); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
 .btns {
   margin-top: 8rem;
   display: flex;
-  text-align: center; }
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s 4s ease forwards; }
 
 .btn {
   background: none;
@@ -301,17 +322,17 @@ a {
     .shape-about {
       display: none; } }
   .shape-about--1 {
-    right: -84px;
-    top: -54px; }
+    right: -8.4rem;
+    top: -5.4rem; }
   .shape-about--2 {
-    right: 48px;
-    top: -36px; }
+    right: 4.8rem;
+    top: -3.6rem; }
   .shape-about--3 {
-    bottom: -47px;
-    right: -52px; }
+    bottom: -4.7rem;
+    right: -5.2rem; }
   .shape-about--4 {
-    bottom: 32px;
-    left: -64px; }
+    bottom: 3.2rem;
+    left: -6.4rem; }
   .shape-about--5 {
     right: 24rem;
     top: 23rem; }
@@ -321,7 +342,8 @@ a {
   .shape-hero--hand {
     bottom: 0;
     left: 60%;
-    transform: translateX(-50%); }
+    transform: translateX(60%);
+    animation: moveHand 2s ease-in forwards; }
 
 .hand-shape {
   position: absolute;
@@ -348,9 +370,14 @@ a {
     max-height: 60rem;
     padding: 4rem; }
     .hero .content h1 {
-      font-size: 7rem; }
+      font-size: 7rem;
+      transform: translateX(20%);
+      animation: moveText 3s ease-in forwards; }
     .hero .content p {
-      font-size: 4rem; }
+      font-size: 4rem;
+      animation: fadeIn 3s 3s ease-out forwards;
+      opacity: 0;
+      margin-top: 3rem; }
   .hero__desktop {
     display: block; }
     .hero__desktop h1 {
@@ -390,10 +417,13 @@ a {
     max-height: 100%;
     flex-basis: 50%;
     padding: 8rem 0rem; }
+    @media only screen and (max-width: 1536px) {
+      .about__content {
+        padding-right: 13rem; } }
     @media only screen and (max-width: 768px) {
       .about__content {
         flex-basis: 100%;
-        padding: 4rem;
+        padding: 6rem;
         align-items: center; } }
   .about__graphics {
     background-color: var(--color-primary);

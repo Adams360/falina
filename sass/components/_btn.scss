@@ -2,6 +2,9 @@
     margin-top: 8rem;
     display: flex;
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s 4s ease forwards;
+
 }
 
 .btn {

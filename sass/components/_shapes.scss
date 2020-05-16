@@ -5,28 +5,28 @@
     }
 
     &--1 {
-        right: -84px;
-        top: -54px;
+        right: -8.4rem;
+        top: -5.4rem;
     }
 
     &--2 {
-        right: 48px;
-        top: -36px;
+        right: 4.8rem;
+        top: -3.6rem;
     }
 
     &--3 {
-        bottom: -47px;
-        right: -52px;
+        bottom: -4.7rem;
+        right: -5.2rem;
     }
 
     &--4 {
-        bottom: 32px;
-        left: -64px;
+        bottom: 3.2rem;
+        left: -6.4rem;
     }
 
     &--5 {
         right: 24rem;
-    top: 23rem;
+        top: 23rem;
     }
 }
 
@@ -41,7 +41,8 @@
     &--hand {
         bottom: 0;
         left: 60%;
-        transform: translateX(-50%);
+        transform: translateX(60%);
+        animation: moveHand 2s ease-in forwards;
     }
 
     &--1 {}

@@ -1,0 +1,64 @@
+.shape-about {
+    position: absolute;
+    @include respond(md) {
+        display: none
+    }
+
+    &--1 {
+        right: -84px;
+        top: -54px;
+    }
+
+    &--2 {
+        right: 48px;
+        top: -36px;
+    }
+
+    &--3 {
+        bottom: -47px;
+        right: -52px;
+    }
+
+    &--4 {
+        bottom: 32px;
+        left: -64px;
+    }
+
+    &--5 {
+        right: 24rem;
+    top: 23rem;
+    }
+}
+
+
+
+// Hero Shapes 
+
+.shape-hero {
+    position: absolute;
+
+
+    &--hand {
+        bottom: 0;
+        left: 60%;
+        transform: translateX(-50%);
+    }
+
+    &--1 {}
+    &--2 {}
+    &--3 {}
+    &--4 {}
+    &--5 {}
+    &--6 {}
+    &--7 {}
+    &--8 {}
+    &--9 {}
+}
+
+
+
+.hand-shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

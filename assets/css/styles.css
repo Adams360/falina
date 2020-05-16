@@ -36,7 +36,7 @@ ul {
   list-style: none; }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: currentColor; }
 
 .container {
@@ -113,6 +113,12 @@ a {
   @media screen and (min-width: 576px) {
     .portrait-mobile {
       display: none; } }
+
+@keyframes moveBg {
+  from {
+    transform: translateX(0%); }
+  to {
+    transform: translateX(-53%); } }
 
 .btn {
   background: none;
@@ -269,6 +275,39 @@ a {
     .bird--contact {
       margin: 0 auto; } }
 
+.shape-about {
+  position: absolute; }
+  @media only screen and (max-width: 768px) {
+    .shape-about {
+      display: none; } }
+  .shape-about--1 {
+    right: -84px;
+    top: -54px; }
+  .shape-about--2 {
+    right: 48px;
+    top: -36px; }
+  .shape-about--3 {
+    bottom: -47px;
+    right: -52px; }
+  .shape-about--4 {
+    bottom: 32px;
+    left: -64px; }
+  .shape-about--5 {
+    right: 24rem;
+    top: 23rem; }
+
+.shape-hero {
+  position: absolute; }
+  .shape-hero--hand {
+    bottom: 0;
+    left: 60%;
+    transform: translateX(-50%); }
+
+.hand-shape {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
 .hero {
   background-color: var(--color-primary);
   display: flex;
@@ -278,6 +317,22 @@ a {
   flex-direction: column;
   margin: 0 8rem 14rem;
   min-height: calc(100vh - 8rem * 2); }
+  .hero .content {
+    z-index: 50;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    max-height: 50rem;
+    padding: 4rem; }
+    .hero .content h1 {
+      font-size: 6rem; }
+    .hero .content p {
+      font-size: 3rem; }
+    .hero .content .btns {
+      margin-top: 4rem; }
   .hero__desktop {
     display: block; }
     .hero__desktop h1 {
@@ -290,20 +345,14 @@ a {
     .hero {
       min-height: calc(100vh - var(--nav-height));
       margin: 0 0 14rem;
-      background-image: url(../../assets/img/hero-mobile.png);
+      background-image: url(../../assets/img/hero-mobile-bg.png);
       background-size: cover;
-      background-repeat: no-repeat;
       background-position: center; }
       .hero__desktop {
         display: none; }
       .hero__mobile {
         display: block;
-        color: var(--color-light); }
-        .hero__mobile h1 {
-          font-size: 5rem;
-          text-align: left; }
-        .hero__mobile p {
-          font-size: 2rem; } }
+        color: var(--color-light); } }
 
 .about {
   min-height: 100vh;
@@ -332,31 +381,50 @@ a {
     background-color: var(--color-primary);
     flex-basis: 50%;
     position: relative;
-    background-image: url(../../assets/img/about-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: 0%; }
+    min-height: 80rem;
+    margin: auto; }
     @media only screen and (max-width: 768px) {
       .about__graphics {
-        animation: moveBg 13s linear infinite alternate; }
-      @keyframes moveBg {
-        to {
-          background-position-x: 100%; } } }
-    @media only screen and (max-width: 768px) {
-      .about__graphics {
-        flex-basis: 100%;
-        padding: 4rem; } }
-    .about__graphics .portrait {
-      position: relative;
-      max-width: 28rem; }
-      @media only screen and (min-width: 768.1px) {
-        .about__graphics .portrait {
+        margin: 0;
+        min-height: 35rem;
+        padding: 4rem;
+        z-index: -1;
+        overflow-x: hidden; }
+        .about__graphics::after {
+          content: "";
+          width: 129rem;
+          height: 100%;
+          display: block;
           position: absolute;
-          left: -17rem;
-          top: 50%;
-          transform: translateY(-50%);
-          max-width: 55rem;
-          width: 100%; } }
+          left: 0;
+          top: 0;
+          background-image: url(../../assets/img/about-mobile-bg.png);
+          background-size: cover;
+          background-position-x: 0;
+          z-index: 1; } }
+    .about__graphics .portrait {
+      position: absolute;
+      left: -17rem;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 55rem;
+      width: 100%;
+      z-index: 2; }
+      @media only screen and (max-width: 768px) {
+        .about__graphics .portrait {
+          max-width: 35rem;
+          left: 50%;
+          transform: translate(-50%, -50%); } }
+
+.portfolio {
+  display: flex;
+  min-height: 100vh;
+  padding: 10rem 0; }
+  .portfolio__text {
+    flex: 1;
+    padding-right: 4rem; }
+  .portfolio__projects {
+    flex: 2; }
 
 .contact {
   min-height: 85vh;
@@ -371,15 +439,15 @@ a {
     min-width: 58rem;
     margin-top: 10rem; }
     .contact__inner .icons {
-      margin: 2rem 0; }
+      margin: 1rem 0; }
       .contact__inner .icons .icon {
         color: var(--color-dark);
-        margin: 1rem;
+        margin: 0rem 2rem;
         transition: all .3s ease-in-out;
         display: inline-block; }
         .contact__inner .icons .icon svg {
-          width: 4rem;
-          height: 4rem; }
+          width: 3rem;
+          height: 3rem; }
           .contact__inner .icons .icon svg path {
             fill: currentColor; }
         .contact__inner .icons .icon:hover {

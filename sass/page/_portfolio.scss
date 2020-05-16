@@ -1,0 +1,20 @@
+.portfolio {
+
+    display: flex;
+    min-height: 100vh;
+
+    padding: 10rem 0;
+
+    &__text {
+        flex: 1;
+        padding-right: 4rem;
+    } 
+    &__projects {
+        flex: 2;
+    }
+
+
+    &__filters {}
+    &__gallery {}
+    &__showcase {}
+}

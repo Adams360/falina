@@ -6,16 +6,18 @@
 @import "global/typography";
 
 @import "animations/lottie";
+@import "animations/animations";
 
 // COMPONENTS STYLES
 @import "components/btn";
 @import "components/nav";
 @import "components/img";
+@import "components/shapes";
 
 // PAGE STYLES
 @import "page/hero";
 @import "page/about";
-@import "page/projects";
+@import "page/portfolio";
 @import "page/contact";
 
 

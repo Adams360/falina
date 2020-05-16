@@ -13,6 +13,7 @@
         left: 0;
         width: 100%;
         padding: 2rem 3rem;
+
     }
 
     &__menu {
@@ -23,6 +24,8 @@
         
         @include respond(md) {
             flex-direction: column;
+            margin-top: 4rem;
+
             text-align: center;
             position: fixed;
             right: 0;
@@ -91,6 +94,10 @@
         font-weight: 500;
         font-size: 2rem;
         text-decoration: none;
+
+        @include respond(md) {
+            font-size: 4rem;
+        }
 
         &--btn {
                 border: 2px solid var(--color-dark);

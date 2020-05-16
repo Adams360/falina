@@ -1,68 +1,72 @@
+.btns {
+    margin-top: 8rem;
+    display: flex;
+    text-align: center;
+}
+
 .btn {
     background: none;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
+    color: currentColor;
+    padding: 1.4rem 1.8rem;
+    border-radius: 4rem;
     font-size: 2rem;
-    text-align: center;
-    font-family: inherit;
-    cursor: pointer;
     text-decoration: none;
-    color: var(--color-primary);
-    padding: .8rem 4rem;
-    border-radius: 30px;
-    margin-top: auto;
-    transition: all .3s ease-in-out;
-    display: inline-block;
-
-    background-color: var(--color-light);
+    appearance: none;
 
     @include respond(md) {
-        margin: 2rem auto;
+        font-size: 3rem;
+        white-space: nowrap;
     }
 
     &--ghost {
-        border: 1px solid var(--color-primary);
-        &:hover {
-            background-color: var(--color-primary);
-            color: var(--color-light);
-        }
+        border-color: currentColor;
     }
 
     &--full {
-    }
+        background-color: var(--color-light);
+        color: var(--color-primary);
+    } 
 }
+
+
+// Scroll Indicator
 
 .scroll-btn {
-    background: none;
-    border: none;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
     text-align: center;
-    font-family: inherit;
-        position: absolute;
-        bottom: -58px;
-        left: 50%;
-        transform: translateX(-50%);
-    cursor: pointer;
+    position: absolute;
+    bottom: -78px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-dark);
 
-    .text {
+    @include respond(md) {
+        color: var(--color-light);
+        bottom: -20px;
+
+    }
+
+    &::before {
+        content: "Scroll";
+        display: block;
+        margin-bottom: 2rem;
         transform: rotate(-90deg);
-        margin-bottom: 20px;
-        font-weight: 500;
-        font-size: 16px;
-    }
-}
+        color: currentColor;
 
-
-@keyframes arrow {
-
-    from {
-        transform: translateY(-100%);
-
+        @include respond(md) {
+            content: "Swipe";
+            font-size: 2rem;
+        }
     }
 
-    to {
-        transform: translateY(0%);
+    .arrow {
+        display: block;
+        animation: moveArrow 1s ease-in-out infinite alternate;
+        @include respond(md) {
+            filter: drop-shadow(0 0 8px var(--color-dark));
+        }
+        path {
+            fill: currentColor;
+        }
     }
 }

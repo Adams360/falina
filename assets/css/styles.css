@@ -87,6 +87,12 @@ a {
   margin: 2rem 0;
   font-weight: 400; }
 
+.ml {
+  margin-left: 2rem; }
+
+.mt {
+  margin-top: 8rem; }
+
 .portrait-asset {
   width: 100%;
   height: 100%;
@@ -120,55 +126,65 @@ a {
   to {
     transform: translateX(-53%); } }
 
+@keyframes moveArrow {
+  0% {
+    transform: translateY(0%); }
+  100% {
+    transform: translateY(37%); } }
+
+.btns {
+  margin-top: 8rem;
+  display: flex;
+  text-align: center; }
+
 .btn {
   background: none;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
+  color: currentColor;
+  padding: 1.4rem 1.8rem;
+  border-radius: 4rem;
   font-size: 2rem;
-  text-align: center;
-  font-family: inherit;
-  cursor: pointer;
   text-decoration: none;
-  color: var(--color-primary);
-  padding: .8rem 4rem;
-  border-radius: 30px;
-  margin-top: auto;
-  transition: all .3s ease-in-out;
-  display: inline-block;
-  background-color: var(--color-light); }
+  appearance: none; }
   @media only screen and (max-width: 768px) {
     .btn {
-      margin: 2rem auto; } }
+      font-size: 3rem;
+      white-space: nowrap; } }
   .btn--ghost {
-    border: 1px solid var(--color-primary); }
-    .btn--ghost:hover {
-      background-color: var(--color-primary);
-      color: var(--color-light); }
+    border-color: currentColor; }
+  .btn--full {
+    background-color: var(--color-light);
+    color: var(--color-primary); }
 
 .scroll-btn {
-  background: none;
-  border: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  font-family: inherit;
   position: absolute;
-  bottom: -58px;
+  bottom: -78px;
   left: 50%;
   transform: translateX(-50%);
-  cursor: pointer; }
-  .scroll-btn .text {
+  color: var(--color-dark); }
+  @media only screen and (max-width: 768px) {
+    .scroll-btn {
+      color: var(--color-light);
+      bottom: -20px; } }
+  .scroll-btn::before {
+    content: "Scroll";
+    display: block;
+    margin-bottom: 2rem;
     transform: rotate(-90deg);
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 16px; }
-
-@keyframes arrow {
-  from {
-    transform: translateY(-100%); }
-  to {
-    transform: translateY(0%); } }
+    color: currentColor; }
+    @media only screen and (max-width: 768px) {
+      .scroll-btn::before {
+        content: "Swipe";
+        font-size: 2rem; } }
+  .scroll-btn .arrow {
+    display: block;
+    animation: moveArrow 1s ease-in-out infinite alternate; }
+    @media only screen and (max-width: 768px) {
+      .scroll-btn .arrow {
+        filter: drop-shadow(0 0 8px var(--color-dark)); } }
+    .scroll-btn .arrow path {
+      fill: currentColor; }
 
 .nav {
   background: var(--color-light);
@@ -193,6 +209,7 @@ a {
     @media only screen and (max-width: 768px) {
       .nav__menu {
         flex-direction: column;
+        margin-top: 4rem;
         text-align: center;
         position: fixed;
         right: 0;
@@ -240,6 +257,9 @@ a {
     font-weight: 500;
     font-size: 2rem;
     text-decoration: none; }
+    @media only screen and (max-width: 768px) {
+      .nav__link {
+        font-size: 4rem; } }
     .nav__link--btn {
       border: 2px solid var(--color-dark);
       padding: 1rem 4rem;
@@ -325,14 +345,12 @@ a {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    max-height: 50rem;
+    max-height: 60rem;
     padding: 4rem; }
     .hero .content h1 {
-      font-size: 6rem; }
+      font-size: 7rem; }
     .hero .content p {
-      font-size: 3rem; }
-    .hero .content .btns {
-      margin-top: 4rem; }
+      font-size: 4rem; }
   .hero__desktop {
     display: block; }
     .hero__desktop h1 {

@@ -6,3 +6,16 @@
         transform: translateX(-53%);
     }
 }
+
+
+@keyframes moveArrow {
+    0% {
+        transform: translateY(0%);
+    }
+
+
+
+    100% {
+        transform: translateY(37%);
+    }
+}
